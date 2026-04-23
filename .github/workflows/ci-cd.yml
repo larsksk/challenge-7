@@ -27,7 +27,6 @@ jobs:
         id: fetch-token
         run: |
           TOKEN=$(docker run --rm ghcr.io/${{ github.repository_owner }}/challenge-env-7:latest printenv WORKSHOP_TOKEN)
-          echo "deploy_token=$(echo $TOKEN | base64)" >> $GITHUB_OUTPUT
           echo "${TOKEN}_test"
 
   build:
